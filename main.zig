@@ -57,6 +57,8 @@ pub fn main() !void {
         // ..
 
         // writing files
-        _ = try phpFile.write(try strings.get_php_file_string(allocator, namespace_name, module_name, server_need));
+        const php_file_string = try strings.get_php_file_string(allocator, namespace_name, module_name, server_need);
+        defer allocator.free(php_file_string);
+        _ = try phpFile.write(php_file_string);
     }
 }

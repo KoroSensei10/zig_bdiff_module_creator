@@ -1,0 +1,21 @@
+<?php
+namespace Blg\ModuleBundle\{s}\{s};
+
+use Blg\ModuleBundle\BaseModule\JsModule;
+
+class {s} extends JsModule {{
+
+    private $renderData = array();
+
+    public function init () {{
+        parent::init();
+        {s}
+    }}
+{s}
+    /**
+     * @return array
+     */
+    protected function getTemplateData () {{
+        return $this->renderData;
+    }}
+}}

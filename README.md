@@ -23,4 +23,4 @@
 - [ ] Faire des tests (lol)
 
 - [ ] Compiler pour MacOS (aarch64)
-- [ ] Compiler pour Linux (Ubuntu24)
+- [ ] Compiler pour Linux (x86_64-Ubuntu24)

@@ -16,7 +16,8 @@
 - [ ] Formatter correctement les entreés utilisateurs
   - [ ] CamelCase & snake_case
 - [ ] Faire un `dry-run`
-- [ ] Ajouter des erreurs
+- [ ] Ajouter des infos en cas d'erreur
+- [ ] Ajouter un auto-complete pour les namespaces
 - [ ] Ajouter des logs d'info (par ex: création ou utilisation d'un namespace)
 - [ ] Une confirmation avant de lancer
 

@@ -1,0 +1,16 @@
+import BaseModule from '../BaseModule.js';
+
+class {s} extends BaseModule {{
+
+	/**
+	 * Run function
+	 * @param {Object} moduleRequest
+	 * @param {Object} moduleConfig
+	 * @returns {Object}
+	 */
+	async run (moduleRequest, moduleConfig) {{
+		return {{}};
+	}}
+}}
+
+export default {s};

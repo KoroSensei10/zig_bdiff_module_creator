@@ -35,3 +35,7 @@ pub fn create_and_get_file(path: []const u8, name: []const u8, extension: []cons
         .{ .read = true },
     );
 }
+
+pub fn to_pascal_case(_: []const u8) []const u8 {}
+pub fn to_camel_case(_: []const u8) []const u8 {}
+pub fn to_snake_case(_: []const u8) []const u8 {}

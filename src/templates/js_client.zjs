@@ -1,0 +1,23 @@
+// @ts-check
+import BaseModule from '#BaseModule.js';
+
+class {s} extends BaseModule {{
+
+    /**
+     * Constructor
+     */
+    constructor (...args) {{
+        // @ts-ignore
+        super(...args);
+    }}
+
+    /**
+     * Initialize module
+     *
+     */
+    async initialize () {{
+    }}
+
+}}
+
+export default {s};

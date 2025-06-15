@@ -2,6 +2,11 @@ const std = @import("std");
 const utils = @import("./utils.zig");
 const strings = @import("./strings.zig");
 
+const baseClientPath = "bdiff/srcBlgModuleBundle";
+const baseServerPath = "bdiff/nodeSrcModuleServer";
+const serverIndexPath = "bdiff/nodeSrcModuleServer/index.js";
+const servicePath = "bdiff/services.yml";
+
 pub fn main() !void {
     const allocator = std.heap.page_allocator;
     const stdout = std.io.getStdOut().writer();
@@ -39,7 +44,7 @@ pub fn main() !void {
 
     {
         // making directories
-        const dirPath = try std.fmt.allocPrint(allocator, "./{s}/{s}/", .{ namespace_name, module_name });
+        const dirPath = try std.fmt.allocPrint(allocator, "./{s}/{s}/{s}/", .{ baseClientPath, namespace_name, module_name });
         defer allocator.free(dirPath);
         try std.fs.cwd().makePath(dirPath);
 
@@ -48,7 +53,9 @@ pub fn main() !void {
         defer phpFile.close();
 
         // creating js client file
-        const jsFile = try utils.create_and_get_file(dirPath, module_name, ".js");
+        const jsClientFilePath = try std.fmt.allocPrint(allocator, "{s}js/", .{dirPath});
+        try std.fs.cwd().makePath(jsClientFilePath);
+        const jsFile = try utils.create_and_get_file(jsClientFilePath, module_name, ".js");
         defer jsFile.close();
 
         // writing twig and less files
@@ -62,3 +69,6 @@ pub fn main() !void {
         _ = try phpFile.write(php_file_string);
     }
 }
+
+fn write_files() void {}
+fn execution_summary() void {}
